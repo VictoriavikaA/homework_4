@@ -9,11 +9,9 @@ def test_greeting():
     age = 25
     # TODO Сформируйте нужную строку
     output = f"Привет, {name}! Тебе {age} лет."
-    print(output)
 
     # Проверяем результат
     assert output == "Привет, Анна! Тебе 25 лет."
-
 
 
 def test_rectangle():
@@ -31,7 +29,6 @@ def test_rectangle():
 
     # TODO сосчитайте площадь
     area = a * b
-    print(area)
 
     assert area == 200
 
@@ -50,7 +47,6 @@ def test_circle():
 
     # TODO сосчитайте длину окружности
     length = 2 * math.pi * r
-    print(length)
 
     assert length == 144.51326206513048
 
@@ -60,20 +56,19 @@ def test_random_list():
     Создайте список из 10 случайных чисел от 1 до 100 (включая обе границы) и отсортируйте его по возрастанию.
     """
     # TODO создайте список
-    my_numbers=[]
-    my_numbers.append(random.randint(1, 101))
-    my_numbers.append(random.randint(1, 101))
-    my_numbers.append(random.randint(1, 101))
-    my_numbers.append(random.randint(1, 101))
-    my_numbers.append(random.randint(1, 101))
-    my_numbers.append(random.randint(1, 101))
-    my_numbers.append(random.randint(1, 101))
-    my_numbers.append(random.randint(1, 101))
-    my_numbers.append(random.randint(1, 101))
-    my_numbers.append(random.randint(1, 101))
+    my_numbers = []
+    my_numbers.append(random.randint(1, 100))
+    my_numbers.append(random.randint(1, 100))
+    my_numbers.append(random.randint(1, 100))
+    my_numbers.append(random.randint(1, 100))
+    my_numbers.append(random.randint(1, 100))
+    my_numbers.append(random.randint(1, 100))
+    my_numbers.append(random.randint(1, 100))
+    my_numbers.append(random.randint(1, 100))
+    my_numbers.append(random.randint(1, 100))
+    my_numbers.append(random.randint(1, 100))
 
     l = sorted(my_numbers)
-    print(l)
 
     assert len(l) == 10
     assert all(l[i] <= l[i + 1] for i in range(len(l) - 1))
@@ -86,7 +81,7 @@ def test_unique_elements():
     new_numbers = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
     # TODO удалите повторяющиеся элементы
     l = list(set(new_numbers))
-    print(l)
+
     assert isinstance(l, list)
     assert len(l) == 10
     assert l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -102,18 +97,9 @@ def test_dicts():
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
     d = {}
-    d=dict(zip(first,second))
-    print(d)
+    d = dict(zip(first, second))
 
     assert isinstance(d, dict)
     assert len(d) == 5
     assert list(d.keys()) == first
     assert list(d.values()) == second
-
-
-test_greeting()
-test_rectangle()
-test_circle()
-test_random_list()
-test_unique_elements()
-test_dicts()
